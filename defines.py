@@ -1,0 +1,2 @@
+#Settings
+console_char = '>'
