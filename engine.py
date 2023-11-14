@@ -10,7 +10,7 @@ def clear_screen():
 
 
 def display_scii_static(figure_name):
-    with open("art/" + figure_name + ".txt", 'r') as file:
+    with open("art/" + figure_name + ".txt", 'r', encoding='utf-8') as file:
         lines = file.readlines()
     df = ''.join(lines)
     print(df)

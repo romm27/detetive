@@ -2,7 +2,7 @@ import engine
 
 
 def menu():
-  choice = int(input("Choose here: "))
+  choice = int(engine.create_user_input("", True))
   while choice != 1 and choice != 2:
     choice = int(engine.create_user_input("Invalid input. Try again: ", True))
   return choice
@@ -13,6 +13,7 @@ def started_game():
   pass
 
 
+engine.display_scii_static('walt')
 print("\nWelcome to Detective Game!\n1. Start\n2. Quit")
 
 while True:
