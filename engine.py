@@ -9,11 +9,14 @@ def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 
-def display_scii_static(figure_name):
+def display_scii_static(figure_name, typewriter = False):
     with open("art/" + figure_name + ".txt", 'r', encoding='utf-8') as file:
         lines = file.readlines()
     df = ''.join(lines)
-    print(df)
+    if typewriter:
+        typewriter_print(df, defines.typewriter_scii_speed)
+    else:
+        print(df)
 
 
 def display_scii_animation(animation_name, time, frames, cls=True):
@@ -43,11 +46,13 @@ def create_user_input(prompt, force_arrow = False):
     return temp
 
 
-def typewriter_print(text):
+def typewriter_print(text, speed = 0):
+    if speed == 0:
+        speed = defines.typewriter_speed
     for l in text:
         sys.stdout.write(l)
         sys.stdout.flush()
         if defines.jump_spaces and l == ' ':
             continue
-        t.sleep(random.random()*10.0/defines.typewriter_speed)
+        t.sleep(random.random()*10.0/speed)
     print('')

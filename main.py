@@ -1,5 +1,5 @@
 import engine
-
+import defines
 
 def menu():
   choice = int(engine.create_user_input("", True))
@@ -13,7 +13,7 @@ def started_game():
   pass
 
 
-engine.display_scii_static('walt')
+engine.display_scii_static('walt', True)
 print("\nWelcome to Detective Game!\n1. Start\n2. Quit")
 
 while True:
