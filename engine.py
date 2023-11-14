@@ -1,6 +1,9 @@
 import pandas as pd
 import time as t
 import os
+import defines
+import random
+import sys
 
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -38,3 +41,13 @@ def create_user_input(prompt, force_arrow = False):
     temp = input(temp_prompt)
     temp = temp.lower()
     return temp
+
+
+def typewriter_print(text):
+    for l in text:
+        sys.stdout.write(l)
+        sys.stdout.flush()
+        if defines.jump_spaces and l == ' ':
+            continue
+        t.sleep(random.random()*10.0/defines.typewriter_speed)
+    print('')
