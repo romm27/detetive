@@ -7,6 +7,7 @@ import sys
 
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
+    t.sleep(0.01)
 
 
 def display_scii_static(figure_name, typewriter = False):
