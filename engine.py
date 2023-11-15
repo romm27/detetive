@@ -6,7 +6,10 @@ import random
 import sys
 
 def clear_screen():
-    os.system('cls' if os.name == 'nt' else 'clear')
+    if not defines.simplified_render:
+        os.system('cls' if os.name == 'nt' else 'clear')
+    else:
+        print('\n'*1000)
     t.sleep(0.01)
 
 
@@ -37,17 +40,16 @@ def display_scii_animation(animation_name, time, frames, cls=True):
             current_frame += 1
 
 
-def create_user_input(prompt, force_arrow = False):
-    if force_arrow:
-        temp_prompt = prompt + '\n>'
-    else:
-        temp_prompt = prompt
-    temp = input(temp_prompt)
+def create_user_input(prompt):
+    temp = input(prompt)
     temp = temp.lower()
     return temp
 
 
-def typewriter_print(text, speed = 0):
+def typewriter_print(text, speed=0):
+    if defines.simplified_render:
+        print(text)
+        return
     if speed == 0:
         speed = defines.typewriter_speed
     for l in text:
@@ -57,3 +59,11 @@ def typewriter_print(text, speed = 0):
             continue
         t.sleep(random.random()*10.0/speed)
     print('')
+
+
+def settings_prompt():
+    display_scii_static("settings_prompt")
+    print("Would you like to use the simplified mode?", 70)
+    print(("Recommended only if running on the pycharm terminal"), 70)
+    defines.simplified_render = create_user_input("(yes/no) \n>").lower() == "yes"
+
