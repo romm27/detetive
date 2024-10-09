@@ -1,6 +1,6 @@
      _________
     / ======= \     Game Engine - Giovanni Strasser
-   / __________\    Story & Game Engine - Guilherme Rocha
+   / __________\    Story - Guilherme Rocha
   | ___________ |   Story - Ana Paula Borba
   | | -       | |
   | |         | |

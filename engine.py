@@ -63,7 +63,7 @@ def typewriter_print(text, speed=0):
 
 def settings_prompt():
     display_scii_static("settings_prompt")
-    print("Would you like to use the simplified mode?", 70)
-    print(("Recommended only if running on the pycharm terminal"), 70)
+    print("Would you like to use the simplified mode?")
+    print(("Recommended only if running on the pycharm terminal"))
     defines.simplified_render = create_user_input("(yes/no) \n>").lower() == "yes"
 
