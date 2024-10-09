@@ -1,9 +1,10 @@
 import engine
 import defines
+import game
 import os
 
 def menu():
-  choice = int(engine.create_user_input("", True))
+  choice = int(engine.create_user_input(""))
   while choice != 1 and choice != 2:
     choice = int(engine.create_user_input("Invalid input. Try again: ", True))
   return choice
